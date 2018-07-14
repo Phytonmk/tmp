@@ -1,0 +1,446 @@
+﻿doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="description" content="")
+    meta(name="author" content="")
+    title ASM-TRAVEL
+    // Bootstrap core CSS
+    link(href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet")
+    link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous")
+    link(href="./css/font.sass" rel="stylesheet")
+    link(href="./css/main.sass" rel="stylesheet")
+  body#page-top
+    div.main-menu.hidden
+      div.wrapper
+        div.close-container
+          i.close-btn
+          | Закрыть
+        div.pages-container
+          a(href="#") Главная
+          a(href="#") услуги
+          a(href="#") Прайс лист
+          a(href="#") Контакты
+    div.forms-container
+      div.form-wrapper#contact-form
+        form(action="#", method="post")
+          div.form-close-btn
+          h4.
+            Введите свои <br>
+            контактные данные
+          p.
+            и в течение 5 минут с Вами <br>
+            свяжется наш менеджер
+          input(type="text", placeholder="Ваше имя", name="name")
+          input(type="text", placeholder="Ваш телефон", name="phone")
+          input(type="hidden" name="service")
+          input(type="submit", value="Записаться")
+      div.form-wrapper#offer-form
+        form(action="#", method="post")
+          div.form-close-btn
+          h4.
+            Персональное<br>предложение для Вас
+          p.
+            Введите свое имя, номер телефона<br>
+            и время удобное для связи, 
+            и наш менеджер свяжется с Вами<br>
+          input(type="text", placeholder="Ваше имя", name="name")
+          input(type="text", placeholder="Ваш телефон", name="phone")
+          div.two-inputs-in-row
+            div.time-picker
+              div.hours-container
+                -var hours = 9
+                while hours < 21.5
+                  div.hours-row= Math.floor(hours += 0.5) + ':' + (hours % 1 == 0.5 ? '30' : '00')
+            input(type="text", placeholder="Время", name="time", data-type="time-pick", autocomplete="off")
+            div.date-picker()
+              div.month-row
+                div.date-arrow.arrow-left
+                div.month-title Месяц
+                div.date-arrow.arrow-right
+              div.days-row
+                each day in ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
+                  div.date-day= day
+              - var i = 0
+              div.date-grid
+                while i < 7 * 6
+                  div.date-cell(data-id=i++)
+            input(type="text", placeholder="Дата", name="date", data-type="date-pick", autocomplete="off")
+          input(type="submit", value="Стать членом клуба!")
+      div.form-wrapper#card-form
+        form(action="#", method="post")
+          div.form-close-btn
+          h4.
+            Ваша карта уже <br> зарезервированна <br> у нас в системе
+          p.
+            Введите свое имя, номер телефона<br>
+            и время удобное для связи, 
+            и наш менеджер свяжется с Вами<br>
+          input(type="text", placeholder="Ваше имя", name="name")
+          input(type="text", placeholder="Ваш телефон", name="phone")
+          div.two-inputs-in-row
+            div.time-picker
+              div.hours-container
+                -var hours = 9
+                while hours < 21.5
+                  div.hours-row= Math.floor(hours += 0.5) + ':' + (hours % 1 == 0.5 ? '30' : '00')
+            input(type="text", placeholder="Время", name="time", data-type="time-pick", autocomplete="off")
+            div.date-picker()
+              div.month-row
+                div.date-arrow.arrow-left
+                div.month-title Месяц
+                div.date-arrow.arrow-right
+              div.days-row
+                each day in ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
+                  div.date-day= day
+              - var i = 0
+              div.date-grid
+                while i < 7 * 6
+                  div.date-cell(data-id=i++)
+            input(type="text", placeholder="Дата", name="date", data-type="date-pick", autocomplete="off")
+          input(type="submit", value="Стать членом клуба!")
+      div.form-wrapper#thanks-form
+        form(action="#", method="post")
+          div.form-close-btn
+          h4.
+            Спасибо за Ваш вопрос!
+          p.
+            В ближайшее время с Вами свяжется наш менеджер <br>
+            и проведет подробную консультацию
+    nav
+      ul
+        li
+          button.call-order-btn.btn.btm.m1180(style="text-transform: none; position: relative; bottom: 25px; right: 30px") Заказать звонок
+        li
+          img.smolnlogo.m1180(src="img/Layer 30.png" align="center" style="width: 210px;height: 65px; \
+          position: relative; left: 100px; bottom: 30px" alt="")
+        li.m1180(style="position: relative; bottom: 25px; left: 150px")
+          a(href="#" style="padding-right: 15px;")
+            img(src="img/instb.png" width="20" height="20" alt="")
+            a(href="#" style="padding-left: 0px")
+              img(src="img/f.png" width="20" height="20" alt="")
+        li(style="position: relative;left: 220px")
+          p.havequestions(style="margin-bottom: 0px; font-size: 0.75rem; margin-top: 0px; padding-top: 20px")
+            | Есть вопросы? Звоните сейчас!
+          p(style="margin-bottom: 0px; margin-top: 0px;font-size: 1.3rem;   letter-spacing: 0.05em;")
+            | 8 812 940 15 51
+          p(style="margin-bottom: 0px; margin-top: 0px; font-size: 0.75rem; text-align: right;")
+            | ежедневно с 10:00 до 21:00
+      .button
+        a.btn-open(href="#").open-main-menu
+    .overlay
+      .wrap
+        ul.wrap-nav
+          li
+            ul
+              li
+                a(href="#" style="font-family: td-neumann; color: #030303; font-size: 2rem; text-align: left;") Главная
+              li
+                a(href="#" style="font-family: td-neumann; color: #030303; font-size: 2rem; text-align: left;") Услуги
+              li
+                a(href="#" style="font-family: td-neumann; color: #030303; font-size: 2rem; text-align: left;") Прайс лист
+              li
+                a(href="#" style="font-family: td-neumann; color: #030303; font-size: 2rem; text-align: left;") Контаты
+    // Intro Header
+    header.masthead
+      .intro-body
+        .container
+          .row
+            .col-lg-8
+              h1.sl1.display-4(style="text-transform: none; font-family: td-neumann; text-align: left;") САЛОН КРАСОТЫ ПРЕМИУМ КЛАССА
+              h4.line(style="text-transform: none;") Смольный Центр Красоты и Здоровья
+    // About Section
+    section#about.content-section.belfon(style="padding-top: 100px")
+      .container
+        .row
+          .col-sm-4.mx-auto
+            img(src="img/Layer 34.png" style="margin-bottom: 0px" alt="")
+            ul.d-flex.no-dots.stol(style="padding-top: 40px")
+              li
+                img(src="img/Forma 1 copy 3.png" style="max-height: 20px; max-width: 40px" alt="")
+              li(style="padding-left: 30px")
+                a(href="text.pug" style="color: #3b3938")
+                  ins(style="text-transform: uppercase; font-size: 1.3rem; font-family: td-neumann;")  Узнайте подробнее 
+                p о персональном предложении нашего салона
+          .col-sm-6.mx-auto
+            h1(style="text-transform: none; padding-bottom: 30px") ЧТО ТАКОЕ СМОЛЬНЫЙ ЦЕНТР?
+            hr(align="left" style="margin-top: 0px" size="4" width="50" color="#030303")
+            p(style="padding-top: 10px")
+              | Смольный центр красоты и здоровья
+              | элитный салон красоты с системой именных карт членов клуба для любителей следить за собой,
+              | которые ценят:
+            ul.d-flex.no-dots.stol
+              li
+                img.icon(src="img/Shape 1.png")
+                p.podpis
+                  | Собственное 
+                  br
+                  |  время
+              li
+                img.icon(src="img/Shape 2.png")
+                p.podpis
+                  | Качественный 
+                  br
+                  |  сервис
+              li
+                img.icon(src="img/Shape 3.png")
+                p.podpis  Спокойствие
+    section(style="background-color: #e9e9e9;")
+      .container(style="padding-bottom: 150px")
+        .row
+          .col-lg1-11.mx-auto(style="padding-bottom: 70px; padding-top: 100px")
+            h1.sl1(align="center" style="text-transform: none; padding-bottom: 30px")
+              | В НАШЕМ САЛОНЕ 
+              br
+              |  ВЫ ПОЛУЧИТЕ
+            hr(align="left mx-auto" style="margin-top: 0px" size="4" width="50" color="#030303")
+        .row
+          .col-sm-6(style=" background-color: white ; padding: 0px 0px 0px 0px")
+            h4.padl70(style="padding-top: 50px;  font-family: Gilroy-Bold") Лучший сервис
+            .padl70(style="text-align: left; padding-bottom: 20px")
+              div(style="border-top: 2px solid #030303; width: 100px; display: inline-block")
+            p.padl70.p3(style="max-width: 500px")
+              | Все сотрудники салона улыбчивы и гостеприимны. Вам окажут полную консультацию, расскажут
+              | о новейших тенденциях в мире бьюти индустрии, проведут экскурсию по всему салону, предложат прохладительные и горячие напитки.
+            p.padl70.p3(style="padding-bottom: 75px; max-width: 500px")
+              | У нас есть собственный ресторан, который предложит вам более 100 позиций по меню,
+              | и сделает ваше пребывание в салоне еще
+              | более комфортным.
+            img(src="img/Layer 40.png" style="background-color: #e9e9e9")
+            h4.padl70(style="padding-top: 50px;  font-family: Gilroy-Bold") Спокойствие и гармонию
+            .padl70(style="text-align: left; padding-bottom: 20px")
+              div(style="border-top: 2px solid #030303; width: 100px; display: inline-block")
+            p.padl70.p3(style="max-width: 500px")
+              | В нашем бьюти-центре всегда играет приятная расслабляющая музыка не мешающая Вам.
+              | Весь коллектив может как пообщаться на интересные темы так и оставить Вас в покое.
+            p.padl70.p3(style="max-width: 500px") Мы ценим Вас и стараемся сделать наилучшие условия для Вашего отдыха!
+            p.padl70.p3(style="padding-bottom: 75px; max-width: 500px") У нас есть собственная парковка
+          .col-sm-6(style=" padding: 0px 0px 0px 0px")
+            img(src="img/01.png" style="background-color: #e9e9e9")
+            h4.padl70(style="padding-top: 50px;  font-family: Gilroy-Bold") Сэкономленное время
+            .padl70(style="text-align: left; padding-bottom: 20px")
+              div(style="border-top: 2px solid #030303; width: 100px; display: inline-block")
+            p.padl70.p3(style="max-width: 500px")
+              | Наши мастера работают в 6 рук
+              | Вам одновременно могут делать процедуры по уходу за руками и ногами, а так же отдельный стилис-парикмахер будет работать над Вашим индивидуальным имиджем
+            p.padl70.p3(style="padding-bottom: 40px; max-width: 500px")
+              | Это помомгает сократить Ваше время пребывания в салоне до 1,5 часов, при этом получив
+              | 3 процедуры.
+            img(src="img/03.png" style="background-color: #e9e9e9")
+    section.content-section.yes760(style="background-color: #f9f9f9")
+      .container
+        h1.sl1(align="center" style="text-transform: none; padding-bottom: 30px")
+          | УСЛУГИ, ОКАЗЫВАЕМЫЕ 
+          br
+          |  В ЦЕНТРЕ КРАСОТЫ СМОЛЬНЫЙ
+        hr(align="left mx-auto" style="margin-top: 0px" size="4" width="50" color="#030303")
+        .row.services
+          div
+            img(src="img/Layer 447.png")
+            h5(style="font-family: Gilroy-Bold; text-align:left; padding-bottom: 17px; padding-top: 27px")
+              | Уход 
+              br
+              |                         за лицом
+            h5(style=" font-size: 1.5rem; font-family: td-neumann; text-align: left;  padding-bottom: 10") от  3 200 руб.
+            ins(style="font-size: 0.9rem;  padding-bottom: 20px") подробнее 
+          div
+            img(src="img/Layer 457.png")
+            h5(style="font-family: Gilroy-Bold; text-align:left; padding-bottom: 17px; padding-top: 27px")
+              | Аппаратная 
+              br
+              |                          косметология
+            h5(style=" font-size: 1.5rem; font-family: td-neumann; text-align: left;  padding-bottom: 10") от  5 000 руб.
+            ins(style="font-size: 0.9rem; padding-bottom: 20px") подробнее 
+          div
+            img(src="img/Layer 487.png")
+            h5(style="font-family: Gilroy-Bold; text-align:left; padding-bottom: 17px; padding-top: 27px")
+              | Парикмахеркие 
+              br
+              |   услуги
+            h5(style=" font-size: 1.5rem; font-family: td-neumann; text-align: left; padding-bottom: 10px") от 2 500 руб.
+            ins(style="font-size: 0.9rem; padding-bottom: 20px ") подробнее 
+          div
+            img(src="img/Layer 497.png")
+            h5(style="font-family: Gilroy-Bold; text-align:left; padding-bottom: 17px; padding-top: 27px")
+              | Уход за руками 
+              br
+              |   и ногами
+            h5(style=" font-size: 1.5rem; font-family: td-neumann; text-align: left; padding-bottom: 10px") от 1 200 руб.
+            ins(style="font-size: 0.9rem; padding-bottom: 20px ") подробнее 
+          div
+            img(src="img/Layer 507.png")
+            h5(style="font-family: Gilroy-Bold; text-align:left; padding-bottom: 17px; padding-top: 27px") Визаж 
+            h5(style=" font-size: 1.5rem; font-family: td-neumann; text-align: left; padding-bottom: 10px") от 2 800 руб.
+            ins(style="font-size: 0.9rem; padding-bottom: 20px ") подробнее 
+          div
+            img(src="img/Layer 527.png")
+            h5(style="font-family: Gilroy-Bold; text-align:left; padding-bottom: 17px; padding-top: 27px") Массаж
+            h5(style=" font-size: 1.5rem; font-family: td-neumann; text-align: left; padding-bottom: 10px") от 7 300 руб.
+            ins(style="font-size: 0.9rem; padding-bottom: 20px ") подробнее 
+          div
+            img(src="img/Layer 517.png")
+            h5(style="font-family: Gilroy-Bold; text-align:left; padding-bottom: 17px; padding-top: 20px")   Депиляция 
+            h5(style=" font-size: 1.5rem; font-family: td-neumann; text-align: left;") от  4 400 руб.
+            ins(style="font-size: 0.9rem; padding-bottom: 20px") подробнее 
+          div
+            img(src="img/Layer 537.png")
+            h5(style="font-family: Gilroy-Bold; text-align:left; padding-bottom: 17px; padding-top: 20px")  Терапевтическая косметология 
+            h5(style=" font-size: 1.5rem; font-family: td-neumann; text-align: left;") от  10 900 руб.
+            ins(style="font-size: 0.9rem; padding-bottom: 20px") подробнее 
+        .row(style="padding-top: 100px")
+          .col-lg1-12.mx-auto(style="padding-bottom: 70px")
+            h1.sl1(align="center" style="text-transform: uppercase; padding-bottom: 30px") Используемая косметика 
+            hr(align="left mx-auto" style="margin-top: 0px" size="4" width="50" color="#030303")
+        .row
+          .slider-container
+            .slider
+              .slider-block
+              .slide-left left
+              .slide-right right
+              .slider-dots
+    section.content-section(style="background-color: #f9f9f9")
+      .container
+        .row
+          .col-lg1-12.mx-auto(style="padding-bottom: 70px")
+            h1.sl1(align="center" style="text-transform: none; padding-bottom: 30px")  НАШ АДРЕСС: 
+            hr(align="left mx-auto" style="margin-top: 0px" size="4" width="50" color="#030303")
+            p
+              | Санкт-Петербург, Орловская улица, д.1
+        .row
+          .col-lg-5.margin960-0(style="padding-right: 10px; padding-left: 0px; padding-bottom: 10px")
+            img(src="img/Rectangle 12.png")
+          .col-lg-3.col-sm-6(style="padding-left: 0px;margin-right: 0px; margin-bottom: 0px; padding-right: 0px; padding-right: 5px")
+            img(src="img/Layer 60.png" style=" padding-bottom: 10PX")
+            img(src="img/Layer 62.png")
+          .col-lg-3.col-sm-6(style="padding-left: 0px;margin-right: 0px; margin-bottom: 0px; padding-right: 0px; padding-left: 5px")
+            img(src="img/Layer 58.png" style=" padding-bottom: 10PX")
+            img(src="img/Layer 59.png")
+    section.content-section(style="background-color: #e9e9e9")
+      .container
+        .row
+          .col-lg1-12.mx-auto(style="padding-bottom: 70px")
+            h1.sl1(align="center" style="text-transform: none; padding-bottom: 30px")  ГАЛЕРЕЯ РАБОТ
+            hr(align="left mx-auto" style="margin-top: 0px" size="4" width="50" color="#030303")
+            p(style=" text-align: center;")
+              | Подписывайтесь на наш официальный 
+              ins(style="font-family: Gilroy-Bold") аккаунт в Инстаграм  
+              br
+              |                            и смотрите все наши работы самыми первыми
+        .row(style="margin-bottom:  30px")
+          .col-4
+            img(src="img/Layer 71.png")
+          .col-4
+            img(src="img/Layer 66.png")
+          .col-4
+            img(src="img/Layer 67.png")
+        .row(style="margin-bottom:  65px")
+          .col-4
+            img(src="img/Layer 68.png")
+          .col-4
+            img(src="img/Layer 69.png")
+          .col-4
+            img(src="img/Layer 70.png")
+    section#about.content-section.belfon
+      .container
+        .row
+          .col-lg-6
+            h2(style="text-transform: uppercase; padding-bottom: 30px")
+              | Получите клубную 
+              br
+              | карту нашего
+              br
+              |  салона
+            hr(align="left" style="margin-top: 0px" size="4" width="50" color="#030303")
+            p.maxwidthp(style="padding-top: 10px; max-width: 470px")
+              | Для наших постоянных клиентов мы предлагаем
+              | Подарочный сертификат и скидку по клубой карте в салоне элитного Вина "Винотека" на ул.Мира.
+            p.maxwidthp(style="max-width: 470px")
+              | Также клубная карта дает скидку 10% в нашем ресторане, который всегда может предложить
+              | Вам блюда на вынос.
+            button.btn(style="text-transform: uppercase;").get-club-card-btn Получить карту клуба
+          .col-lg-6
+            img.card(src="img/zz.jpg" style="margin-bottom: 0px; width: 550px; padding-top: 70px" alt="")
+    section#about.content-section.mapp
+      .container
+        .row
+          .col-lg-6.mx-auto.map1(style="padding-bottom: 40px; ")
+            .cel
+              | ,,
+            // <img src="img/Forma 1.png"   style="width: 30px; height: 3; position: relative; left: 250px; top: 35px">
+            h5(style="text-transform: uppercase; padding-bottom: 10px; text-align: center; padding-top: 30px;  color: #ffffff;")
+              | Приглашаем вас 
+              br
+              |  к нам в салон
+            p(style="padding-top: 10px; text-align: center;  margin-bottom: 20px;  font-size: 1.1rem")
+              | Санкт-Петербург, 
+              br
+              |                              Орловская улица д.1
+            h5(style="text-align: center; font-family: Gilroy-Regular; padding-top: 0px; margin-bottom: 0px;  color: #ffffff;")
+              | 8 812 940 15 51
+            p(style="padding-top: 10px; text-align: center;  margin-bottom: 10px; font-size: 0.8rem")  mail@gmail.com 
+            p(style="padding-top: 10px; text-align: center;   font-size: 0.9rem")
+              | удобная парковка у нашего 
+              br
+              |                       Салона Красоты
+    section.content-section(style="background-color: #f9f9f9")
+      .container
+        .row
+          .col-lg-12.mx-auto(style="padding-bottom: 70px")
+            h1.sl1(align="center" style="text-transform: uppercase; padding-bottom: 30px")  остались вопросы?
+            hr(align="left mx-auto" style="margin-top: 0px" size="4" width="50" color="#030303")
+            p(style=" text-align: center;")
+              | Если у Вас остались вопросы по нашим услугам или вы хртели бы записаться 
+              br
+              |                                к нам в салон напишите нам, мы ответим в течение 15 минут
+        .row(style="margin-bottom:  65px")
+          form(action="#", method="post").questions
+            div.two-inputs-in-row
+              input(type="text", placeholder="Ваше имя")
+              input(type="text", placeholder="Ваш телефон")
+            textarea(placeholder="сообщение")
+            input(type="submit", value="Отправить вопрос")
+
+    // Footer
+    footer
+      section.content-section(style="background-color: #2f2d2c; color: #ffffff;margin-bottom: 0px; padding-bottom: 0px")
+        .container
+          .row
+            .col-lg-3(style="padding-bottom: 70px")
+              img(src="img/Layer 2.png" style="width: 190px; height: 60px")
+            .col-lg-2.col-3(style="padding-bottom: 70px; padding-top: 20px")
+              ins(style="font-family: Gilroy-Regular")  Главная 
+              p(style="padding-top: 10px;  font-size: 0.9rem; text-decoration: none; ")
+                a(href="" style="color: #ffffff ") Закрытый клуб
+                br
+                a(href="" style="color: #ffffff ") Наша команда
+                br
+                a(href="" style="color: #ffffff ") Наш интерьер
+                br
+                br
+            .col-lg-2.col-3(style="padding-bottom: 70px; padding-top: 20px")
+              ins(style="font-family: Gilroy-Regular")  Галерея работ
+              p(style="padding-top: 10px;  font-size: 0.9rem; text-decoration: none; padding-bottom: 20px")
+                a(href="" style="color: #ffffff ") Наш инстаграмм
+                br
+              a(href="sample.pug")
+                img(src="img/inst.png" style="width: 30px; height: 30px;")
+            .col-lg-2.col-3(style="padding-bottom: 70px; padding-top: 20px")
+              ins(style="font-family: Gilroy-Regular")  Прайс лист 
+              p(style="padding-top: 10px;  font-size: 0.9rem; text-decoration: none; ")
+                a(href="" style="color: #ffffff ") Прайс лист
+                br
+                a(href="" style="color: #ffffff ") Онлайн запись
+                br
+            .col-lg-2.col-3(style="padding-bottom: 70px; padding-top: 20px")
+              ins(style="font-family: Gilroy-Regular")  Контакты 
+              p(style="padding-top: 10px;  font-size: 0.9rem; text-decoration: none; ")
+                a(href="" style="color: #ffffff ")  8(999)999-99-99
+                br
+                a(href="" style="color: #ffffff ") mail@mail.ru
+                br
+                |                       Санкт-Петербург, 
+                br
+                |                       Орловская улица д.1   
+    // Bootstrap core JavaScript
+    script(src="js/main.js")
